@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <style>
+            table {
+                border-collapse: collapse;
+                width:80%;
+                margin-top: 5%;
+                font-size: 12pt;
+            }
+            th, td{
+                border : 1pt solid #D8D9DA; 
+                padding:10px;
+                text-align: center;
+            }
+            th{
+                background-color: #D6EFED;                
+            }
+        </style>
+    </head>
+    <body>
+        <table id="Employeetable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Date pf Joining</th>
+                    <th>Address</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+        <script>
+            var Employee = [{ Name : "Rushikesh Suryawanshi", Designation: 'Techinal Writing', DateofJoining : '5-12-2023', Address: "Pune", Salary:'600000'},
+                            { Name : "Tejas Rajput", Designation: 'Techinal Writing', DateofJoining : '19-11-2023', Address: "Pune", Salary:'600000'},
+                            { Name : "Omkar Swami", Designation: 'Techinal Writing', DateofJoining : '23-11-2023', Address: "Pune", Salary:'300000'},
+                            { Name : "Parth Pethe", Designation: 'Techinal Writing', DateofJoining : '27-11-2023', Address: "Pune", Salary:'600000'}];
+            
+            function displayemployees(){
+                var tableBody = document.getElementById('Employeetable').getElementsByTagName('tbody')[0];
+                tableBody.innerHTML = '';
+
+                Employee.forEach(function(employee){
+                    if(employee.Designation === 'Techinal Writing' && employee.Salary > 500000 && employee.Salary < 700000){
+                        var row = tableBody.insertRow();
+                        row.insertCell(0).innerHTML = employee.Name;
+                        row.insertCell(1).innerHTML = employee.Designation;
+                        row.insertCell(2).innerHTML = employee.DateofJoining;
+
+                    }
+                });
+            }
+            displayemployees();
+        </script>
+    </body>
+</html>
